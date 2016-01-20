@@ -41,3 +41,4 @@ Imprime:
 7345 2015-08-13 21:01:51 verde
 7345 2015-08-13 21:01:51 probablemente
 ```# FuncionLog
+# FuncionLog
