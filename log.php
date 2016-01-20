@@ -5,9 +5,9 @@
  * @category Categoria
  * @package  Helpers
  * @author   Machado, Juan Martín <machado.juanmartin@gmail.com>
- * @license  www.sondeos.com.ar Sondeos
+ * @license  www.juanmartinmachado.com.ar
  * @version  1.0.0
- * @link     Sondeos, www.sondeos.com.ar
+ * @link     jmartinmachado, https://github.com/jmartinmachado/FuncionLog
  *
  * @internal Fecha de creación:   2016-01-19
  * @internal Ultima modificación: 2016-01-19
@@ -49,7 +49,11 @@ if (!defined("LOG_MAXBACKUPINDEX")) {
 /**
  * Genero el nombre del archivo
  */
-$nombrelogs = LOG_CARPETA . "/" . basename($_SERVER["SCRIPT_NAME"], ".php").".log";
+if (!defined("LOG_NOMBRE")) {
+    $nombrelogs = LOG_CARPETA . basename($_SERVER["SCRIPT_NAME"], ".php").".log";
+} else {
+    $nombrelogs = LOG_CARPETA . LOG_NOMBRE . ".log";
+}
 
 $appenders = array('rotacion');
 if (AMBIENTE != 'PRODUCCION') {
