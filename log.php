@@ -173,6 +173,9 @@ function logHelper($argumento)
     case 'string':
         $texto = $argumento ;
         break;
+    case 'array':
+        $texto = json_encode($argumento, true) ;
+        break;
     default:
         ob_start();
         var_dump($argumento);
@@ -182,5 +185,3 @@ function logHelper($argumento)
     }
     return $texto;
 }
-
-
